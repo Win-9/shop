@@ -4,7 +4,7 @@ package com.example.ex1hellojpa.domain;
 import javax.persistence.*;
 
 @Entity
-public class Delivery {
+public class Delivery extends BaseEntity{
     @Id @GeneratedValue
     private Long id;
 

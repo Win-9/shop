@@ -1,5 +1,6 @@
 package com.example.ex1hellojpa;
 
+import com.example.ex1hellojpa.domain.Book;
 import com.example.ex1hellojpa.domain.Member;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,7 +24,10 @@ public class Ex1HelloJpaApplication {
         tx.begin();
 
         try {
-
+            Book book = new Book();
+            book.setAuthor("김경식");
+            book.setName("돈키호테");
+            em.persist(book);
             tx.commit();
         }catch (Exception e){
             tx.rollback();
